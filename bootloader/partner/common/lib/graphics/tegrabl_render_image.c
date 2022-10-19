@@ -185,12 +185,6 @@ tegrabl_error_t tegrabl_render_bmp(struct tegrabl_surface *surf,
 	length = bmf->bih.image_size;
 	pr_debug("%s, image size = %d\n", __func__, length);
 
-	if (bmf->bih.compression_type) {
-		err = TEGRABL_ERROR(TEGRABL_ERR_NOT_SUPPORTED, 4);
-		pr_error("(%s) Only uncompressed BMP image is supported\n",	__func__);
-		goto fail;
-	}
-
 	if ((bmf->bih.height < 0) || (bmf->bih.width < 0)) {
 		err = TEGRABL_ERROR(TEGRABL_ERR_INVALID, 4);
 		pr_error("(%s) Invalid height or width in BMP image\n",	__func__);
