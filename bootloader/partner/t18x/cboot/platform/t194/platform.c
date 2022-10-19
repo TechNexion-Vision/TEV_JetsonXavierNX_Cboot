@@ -523,7 +523,7 @@ void enter_shell_upon_user_request(void)
 	pr_info("Hit any key to stop autoboot:");
 	tegrabl_enable_timestamp(false);
 
-	for (i = 4; i > 0; i--) {
+	for (i = 0; i > 0; i--) {
 		if (tegrabl_getc_wait(500) > 0) {
 			tegrabl_display_printf(GREEN, "BOOTLOADER SHELL MODE\n");
 			tegrabl_printf("\n");
