@@ -16,5 +16,5 @@ $ make -C ./bootloader/partner/t18x/cboot PROJECT=t194 TOOLCHAIN_PREFIX="${CROSS
 Flash cboot.
 ```
 $ sudo ./flash.sh -k cpu-bootloader --image cboot/out/build-t194/lk.bin jetson-xavier-nx-devkit-emmc mmcblk0p1
-# You can swap 'bootloader/cboot_t194.bin' with 'lk.bin', remember to rename it.
+# You can swap 'bootloader/cboot_t194.bin' with 'out/lk.bin', remember to rename it.
 ```
