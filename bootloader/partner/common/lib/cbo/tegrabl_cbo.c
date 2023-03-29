@@ -32,21 +32,14 @@ static char **p_boot_dev_order;
 
 static const char *default_boot_dev_order[] = {
 	/* Specified in the order of priority from top to bottom */
-	"sd",
 	"usb",
-	"nvme",
 	"emmc",
-	"net",
 };
 
 static uint8_t default_boot_order[NUM_SECONDARY_STORAGE_DEVICES] = {
 	/* Specified in the order of priority from top to bottom */
-	BOOT_FROM_SD,
 	BOOT_FROM_USB,
-	BOOT_FROM_NVME,
 	BOOT_FROM_BUILTIN_STORAGE,
-	BOOT_FROM_NETWORK,
-	BOOT_DEFAULT,
 };
 
 char *boot_cfg_vars[] = {
@@ -60,13 +53,8 @@ char *boot_cfg_vars[] = {
 };
 
 static struct boot_devices g_boot_devices[] = {
-	{"sd",		BOOT_FROM_SD},
 	{"usb",		BOOT_FROM_USB},
-	{"net",		BOOT_FROM_NETWORK},
 	{"emmc",	BOOT_FROM_BUILTIN_STORAGE},
-	{"ufs",		BOOT_FROM_BUILTIN_STORAGE},
-	{"sata",	BOOT_FROM_BUILTIN_STORAGE},
-	{"nvme",	BOOT_FROM_NVME},
 };
 
 tegrabl_error_t tegrabl_read_cbo(char *part_name)
