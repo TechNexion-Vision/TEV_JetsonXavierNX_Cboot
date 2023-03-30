@@ -312,6 +312,7 @@ static int display_boot_menu(struct conf * const extlinux_conf)
 	while (true) {
 		pr_info("Enter choice: ");
 		tegrabl_enable_timestamp(false);
+		user_input_wait_timeout_ms = 1000;
 		if (first_attempt && (user_input_wait_timeout_ms != 0UL)) {
 			ch = tegrabl_getc_wait(user_input_wait_timeout_ms);
 		} else {
